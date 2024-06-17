@@ -1,0 +1,276 @@
+/* NORMALIZACIÓN: */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* esto mantinene el ancho y el alto ademas de padding y border */
+    font-family: "PT Mono", monospace;
+    list-style: none; /*Quitar puntos y decoración de las listas*/
+    text-decoration: none; /*Quitar el subrayado de los enlaces*/
+    color: white;
+}
+
+body{
+    background-color: black; /*TODO: borrar para el fondo final*/
+}
+
+header{
+    position: fixed; /*Para que se quede fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 10; /* Para que siempre se vea el header por encima de los otros elementos*/
+    width: 100%;
+    display: flex; /* Para que los elementos se muestren en línea*/
+    align-items: center; /*Centra verticalmente*/
+    justify-content: space-between; /*Los elementos se separan*/
+    padding: 15px 3% ;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 800; /* El grueso de las letras del logo*/
+}
+
+.navlist{
+    display: flex; /* Esto para que los elementos de la lista esten en línea*/
+}
+
+.navlist a{
+    margin-left: 60px; /* Separar los elementos*/
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /*subrayado transparente*/
+    transition: all .5 ease; /* animar el navlis*/
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white; /* Subrayado blanco al pasar el mouse*/
+}
+
+#menu-icon{
+    display: none; /*En none para que se vea solo cuando la página esté colapsada*/
+} 
+
+#menu-icon{
+    color: white;
+    font-size: 35px;
+    z-index: 11;  /* Para que este sobre el header*/
+    cursor: pointer; /*Pra que aparezca la manito al pasar el mouse por encima*/
+}
+
+
+#menu-toggle{
+    display: none; /*Para que no se vea el checkbox*/
+}
+
+.menu-icon-action{
+    display: block; /* Para que no se le pueda hacer click*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #1a0231 0%, #4b039c 25%, #000000 75%); /* fondo en gradiente*/
+    position: relative; /* relativo al contenedor*/
+    display: grid; /* para que s epueda dividir en columnas*/
+    grid-template-columns: 1fr 1fr; /* las 2 columnas*/
+    align-items: center; /* para que se pueda alinear verticalmente cada uno*/
+    gap: 2rem; /* para que haya espacio entre las dos columnas*/
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text h1{
+    font-family: "Roboto Slab", serif;
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0 30px;
+}
+
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5 ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.video{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.video i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hero-img img{
+    width: 400px;
+    height: auto;
+    margin: 10% 0 0 10%;
+    transition: all 5s linear;
+    border-radius: 50%;
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all .5s  ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 10%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 50px;
+    background-color: #21032c;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+/* Aca vamos a hacer las media queries */
+
+@media (max-width: 992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p{
+        font-size: 70%;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #021719ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+
+}
